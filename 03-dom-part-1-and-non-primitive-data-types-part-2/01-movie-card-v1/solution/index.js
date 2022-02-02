@@ -58,7 +58,7 @@ export default class MovieCard {
               <ul class="list-unstyled">
                 <li>
                   <small class="text-muted">
-                    <b>Geners</b> ${this.getGenres()}
+                    <b>Genres</b> ${this.getGenres()}
                   </small>
                 </li>
               </ul>
