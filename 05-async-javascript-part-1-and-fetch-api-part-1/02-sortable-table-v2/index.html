@@ -1,0 +1,78 @@
+<!doctype html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
+
+  <link rel="stylesheet" href="05-async-javascript-part-1-and-fetch-api-part-1/02-sortable-table-v2/style.css">
+</head>
+<body>
+
+<div id="root"></div>
+
+<script type="module">
+  import SortableTable from './solution';
+  import { movies } from './movies.js';
+
+  const header = [
+    {
+      id: 'id',
+      title: 'ID',
+      sortable: true,
+      sortType: 'number'
+    },
+    {
+      id: 'poster_path',
+      title: 'Poster',
+      sortable: false,
+      template: item => {
+        return `
+          <td class="col">
+            <img class="sortable-table-image" src="${item.poster_path}" loading="lazy" alt="${item.poster_path}">
+          </td>
+        `;
+      }
+    },
+    {
+      id: 'title',
+      title: 'Title',
+      sortable: true,
+      sortType: 'string',
+      template: item => {
+        return `<td class="col">
+          <a href="/movie-details/${item.id}">
+            ${item.title}
+          </a>
+        </td>`
+      }
+    },
+    {
+      id: 'original_language',
+      title: 'Language',
+      sortable: true,
+      sortType: 'string'
+    },
+    {
+      id: 'popularity',
+      title: 'Popularity',
+      sortable: true,
+      sortType: 'number'
+    },
+    {
+      id: 'release_date',
+      title: 'Release',
+      sortable: true,
+      sortType: 'custom',
+      sort (date1, date2) {
+        return Date.parse(date1) - Date.parse(date2)
+      }
+    }
+  ];
+
+  const sortableTable = new SortableTable(header, {
+    data: movies
+  });
+
+  root.append(sortableTable.element);
+</script>
+</body>

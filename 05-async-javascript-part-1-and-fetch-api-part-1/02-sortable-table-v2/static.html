@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
+
+  <link rel="stylesheet" href="05-async-javascript-part-1-and-fetch-api-part-1/02-sortable-table-v2/style.css">
+</head>
+<body>
+
+<div id="root">
+  <table class="table table-striped">
+    <thead class="sortable-table-header" data-element="header">
+      <tr class="d-flex">
+
+      <th class="col" data-id="id" data-sortable="true" data-order="asc">
+        <span>ID</span>
+      </th>
+
+      <th class="col" data-id="poster_path" data-sortable="false" data-order="">
+        <span>Poster</span>
+      </th>
+
+      <th class="col" data-id="title" data-sortable="true" data-order="">
+        <span>Title</span>
+      </th>
+
+      <th class="col" data-id="original_language" data-sortable="true" data-order="">
+        <span>Language</span>
+      </th>
+
+      <th class="col" data-id="popularity" data-sortable="true" data-order="">
+        <span>Popularity</span>
+      </th>
+
+      <th class="col" data-id="release_date" data-sortable="true" data-order="">
+        <span>Release</span>
+      </th>
+
+    </tr>
+    </thead>
+    <tbody data-element="body">
+      <tr class="d-flex">
+        <td class="col">862</td>
+        <td class="col">
+          <img class="sortable-table-image" src="https://image.tmdb.org/t/p/w500/uXDfjJbdP4ijW5hWSBrPrlKpxab.jpg"
+               loading="lazy" alt="https://image.tmdb.org/t/p/w500/uXDfjJbdP4ijW5hWSBrPrlKpxab.jpg">
+        </td>
+        <td class="col">Toy Story</td>
+        <td class="col">en</td>
+        <td class="col">21.946943</td>
+        <td class="col">1995</td>
+      </tr>
+      <tr class="d-flex">
+        <td class="col">8844</td>
+        <td class="col">
+          <img class="sortable-table-image" src="https://image.tmdb.org/t/p/w500/vgpXmVaVyUL7GGiDeiK1mKEKzcX.jpg"
+               loading="lazy" alt="https://image.tmdb.org/t/p/w500/vgpXmVaVyUL7GGiDeiK1mKEKzcX.jpg">
+        </td>
+        <td class="col">Jumanji</td>
+        <td class="col">en</td>
+        <td class="col">17.015539</td>
+        <td class="col">1995</td>
+      </tr>
+      <tr class="d-flex">
+        <td class="col">15602</td>
+        <td class="col">
+          <img class="sortable-table-image" src="https://image.tmdb.org/t/p/w500/1FSXpj5e8l4KH6nVFO5SPUeraOt.jpg"
+               loading="lazy" alt="https://image.tmdb.org/t/p/w500/1FSXpj5e8l4KH6nVFO5SPUeraOt.jpg">
+        </td>
+        <td class="col">Grumpier Old Men</td>
+        <td class="col">en</td>
+        <td class="col">11.7129</td>
+        <td class="col">1995</td>
+      </tr>
+      <tr class="d-flex">
+        <td class="col">31357</td>
+        <td class="col">
+          <img class="sortable-table-image" src="https://image.tmdb.org/t/p/w500/4wjGMwPsdlvi025ZqR4rXnFDvBz.jpg"
+               loading="lazy" alt="https://image.tmdb.org/t/p/w500/4wjGMwPsdlvi025ZqR4rXnFDvBz.jpg">
+        </td>
+        <td class="col">Waiting to Exhale</td>
+        <td class="col">en</td>
+        <td class="col">3.859495</td>
+        <td class="col">1995</td>
+      </tr>
+      <tr class="d-flex">
+        <td class="col">11862</td>
+        <td class="col">
+          <img class="sortable-table-image" src="https://image.tmdb.org/t/p/w500/rj4LBtwQ0uGrpBnCELr716Qo3mw.jpg"
+               loading="lazy" alt="https://image.tmdb.org/t/p/w500/rj4LBtwQ0uGrpBnCELr716Qo3mw.jpg">
+        </td>
+        <td class="col">Father of the Bride Part II</td>
+        <td class="col">en</td>
+        <td class="col">8.387519</td>
+        <td class="col">1995</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!doctype html>
+<meta charset="UTF-8">
+
+<head>
+  <link rel="stylesheet" type="text/css" href="05-async-javascript-part-1-and-fetch-api-part-1/01-notification/style.css">
+</head>
+
+<button id="btn">Show simple message!</button>
+
+<script type="module">
+  import NotificationMessage from './solution';
+
+  btn.addEventListener('click', () => {
+    const notification = new NotificationMessage(`hello ${Math.random()}`, {
+      duration: 2000,
+      type: 'success'
+    });
+
+    notification.show();
+  });
+</script>
