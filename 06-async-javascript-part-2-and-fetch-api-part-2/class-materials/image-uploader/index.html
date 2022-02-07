@@ -1,0 +1,41 @@
+<!doctype html>
+<meta charset="utf-8">
+
+<input id="fileInput" type="file">
+
+<script type="module">
+  // NOTE: to check status [GET] https://api.imgur.com/3/credits for more info: https://api.imgur.com/
+  const IMGUR_CLIENT_ID = '8d6227841ef87f2';
+  const fileInput = document.getElementById('fileInput');
+
+  fileInput.addEventListener('change', async () => {
+    const [file] = fileInput.files;
+    const [result, error] = await upload(file);
+
+    console.error('result', result);
+    console.error('error', error);
+  });
+
+  const upload = async (file) => {
+    const formData = new FormData();
+
+    formData.append('image', file);
+
+    try {
+      const response = await fetch('https://api.imgur.com/3/image', {
+        method: 'POST',
+        headers: {
+          Authorization: `Client-ID ${IMGUR_CLIENT_ID}`
+        },
+        body: formData,
+        referrer: ''
+      });
+
+      const data = await response.json();
+
+      return [data, null];
+    } catch (error) {
+      return [null, error]
+    }
+  }
+</script>
